@@ -1,0 +1,57 @@
+/* ==================
+COLORS MATCHED VIA:
+https://html-color-codes.info/colors-from-image/#
+========================== */
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+}
+
+#wrapper{
+  width: 970px;
+  height: auto;
+  background-color: orange;
+  /* center on window */
+  margin: auto;
+  /* padding: 37px 50px 20px 50px; */
+  text-align: center;
+}
+
+#header{
+  width: auto;
+  height: auto;
+  margin: auto;
+  /* top to bottom is default */
+  background: linear-gradient(#F6F6F6, #CECECE);
+  /* border: 1px solid black; */
+}
+
+.navbtn{
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 480px){
+  .navbtn{
+    background-color: red;
+    display:block;
+  }
+  #wrapper{ width: 25% ;}
+}
+@media only screen and (min-width: 481px){
+  .navbtn{
+    background-color: yellow;
+    display:inline;
+  }
+  #wrapper{ width: 50%;}
+}
+@media only screen and (min-width: 1024px){
+  .navbtn{
+    background-color: green;
+    display: inline-block;
+  }
+  #wrapper{ width: 100%;}
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <!-- For bootstrap, to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Register - CSS Clickable Wireframe Exercise - User Dashboard</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+
+    <!-- Use .container for a responsive fixed width container. -->
+    <!-- <div class="container">
+      ...
+    </div> -->
+
+    <!-- Use .container-fluid for a full width container, spanning the entire width of your viewport. -->
+    <div id="wrapper" class="container-fluid">
+
+      <div id="form" class="container-fluid">
+
+        <div class="row header heading">
+          <div class="col-md-12"><h4>Register New User</h4></div>
+        </div>
+
+        <form class="form-horizontal">
+
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="textInputEmail" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" id="textInputFirstName" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="inputFirstName">Last Name</label>
+            <input type="text" class="form-control" id="textInputLastName" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="inputConfirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="">
+          </div>
+
+        </form>
+
+        <a href="login.html" class="btn btn-primary btn-md active" role="button">Already have an Account? Login!</a>
+        <button type="button" class="btn btn-success pull-right">Register</button>
+        <a href="index.html" class="btn btn-warning btn-md pull-right" role="button">Back</a>
+
+      </div>
+
+    </div>
+
+</body>
+</html>

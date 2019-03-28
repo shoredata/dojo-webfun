@@ -1,0 +1,103 @@
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  /* outline: 1px dotted red; */
+}
+
+body{
+  background-color: black;
+  color: yellow;
+}
+.row { line-height: 0 }
+div.row div{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+div.brick{
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  /* border-radius: 5px; */
+}
+div.coin{
+  background: url('coin4.gif');
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+div.peach{
+  background: url('peach.png');
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+div#lives{
+  color:red;
+}
+div#pacman{
+  background: url('pacman1.gif');
+  /* -webkit-transform: rotate(90deg); */
+  /* transform: rotate(90deg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+div#ghost0{
+  background: url('gh_1.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+div#ghost1{
+  background: url('gh_2.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+div#ghost2{
+  background: url('gh_3.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+div#ghost3{
+  background: url('gh_4.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}

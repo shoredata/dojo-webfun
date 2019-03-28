@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <!-- For bootstrap, to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Index - Week 2 - Assignment: Hover In/Out</title>
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="jq-intro-style.css"> -->
+    <style>
+      img {
+        border: 10px
+        display: inline-block;
+        width: 150px;
+      }
+      #wrapper{
+        margin-top: 20px;
+      }
+    </style>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // Hover In/Out (Optional)
+        //
+        // Create a simple HTML page with 4 images of equal width and height
+        // (you can use any image you like). When the mouse hovers on an image,
+        // have that be replaced by another image (on the same position).
+        // When the mouse hovers out of the image, bring the original image back.
+        //
+        // HINT: The jQuery .hover() function accepts 2 functions as parameters:
+        // the first function runs the code for when we enter the area with the
+        // mouse, the second writes the code for what we want to happen when the
+        // mouse leaves the area!
+        //
+        // Don't spend more than 3-6 hours trying to get this to work.
+
+        $( "img" ).hover(function() {
+  				$(this).attr('src', 'ninja2.png');
+  			}, function() {
+  				$(this).attr('src', 'cat1.png');
+  			});
+
+      }); //end- ready{}
+    </script>
+
+  </head>
+  <body>
+
+    <!-- Use .container-fluid for a full width container, spanning the entire width of your viewport. -->
+    <div id="wrapper" class="container-fluid">
+
+      <div id="header" class="container-fluid bordered">
+
+        <img id="" src="cat1.png" state="1" src_alt="ninja2.png" src_orig="cat1.png">
+        <img id="" src="cat1.png" state="1" src_alt="ninja2.png" src_orig="cat1.png">
+        <img id="" src="cat1.png" state="1" src_alt="ninja2.png" src_orig="cat1.png">
+        <img id="" src="cat1.png" state="1" src_alt="ninja2.png" src_orig="cat1.png">
+
+      </div>
+
+    </div>
+
+
+</body>
+</html>

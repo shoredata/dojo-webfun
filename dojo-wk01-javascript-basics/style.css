@@ -1,0 +1,74 @@
+/* ==================
+COLORS MATCHED VIA:
+https://html-color-codes.info/colors-from-image/#
+BACKGROUND = #1C345D
+
+RED = #CF3036
+CYAN = #2A7D8C
+DARKBLUE = #0E1822
+DARKGRAY = #5D6573
+
+LINKTEXT = #6ADDE6
+SPANTEXT = #6D8EFF
+BODYTEXT = #C2D6EC
+========================== */
+
+/* CSS reset settings here */
+
+#wrapper{
+  width: 970px;
+  background-color: #1C345D;
+  margin: 0px auto;
+  padding: 15px;
+}
+#header{
+  border-radius: 10px;
+  background-color: #CF3036;
+  color: #C2D6EC;
+  /* need bottom margin to move nav block (blue) lower */
+  margin: 0 0 15px 0;
+  padding: 1px 0 1px 25px;
+  /* this is a div, and div is a display:block by default, it takes up full width */
+}
+#navigation{
+  border-radius: 10px;
+  background-color: #2A7D8C;
+  color: #6ADDE6;
+  padding: 0px 1px 1px 0px;
+  width: 210px; /* 180 */
+  font-size: 13px;
+  /* need to put main to the right of nav, both need to be inline block */
+  display: inline-block;
+  /* need to move main right from nav */
+  margin-right: 15px;
+}
+#main_content{
+  width: 700px;
+  border-radius: 10px;
+  background-color: #0E1822;
+  /* need to put main to the right of nav, both need to be inline block */
+  display: inline-block;
+  /* need to move main block up to be below header */
+  vertical-align: top;
+  padding: 0px 20px 1px 20px;
+  font-size: 14px;
+}
+#advertisement{
+  border-radius: 10px;
+  background-color: #5D6573;
+  font-size: 14px;
+  /* need to put margin between subcontents and adv */
+  margin-top: 20px;
+  padding: 1px 10px 5px 20px;
+}
+
+
+a{
+  color: #6ADDE6;
+}
+span {
+  color: #6D8EFF;
+}
+body {
+  color: #C2D6EC;
+}

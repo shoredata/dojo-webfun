@@ -1,0 +1,72 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+
+ outline: 1px dotted red;
+}
+#wrapper{
+ width: 950px;
+ background-color: silver;
+ margin: 0px auto;
+
+/* this is a div, and div is a display:block by default, it takes up full width */
+
+/* need padding on all 4 sides */
+ padding: 15px;
+
+}
+#header{
+ height: 150px;
+ background-color: green;
+
+/* this is a div, and div is a display:block by default, it takes up full width */
+
+/* need margin to move nav block
+  (blue) lower */
+margin-bottom: 15px;
+}
+#navigation{
+ height: 300px;
+ width: 200px;
+ background-color: blue;
+
+/* need to put main to the right of nav, both need to be inline block */
+ display: inline-block;
+
+/* need to move main right from nav */
+ margin-right: 15px;
+}
+#main_content{
+ height: 400px;
+ width: 700px;
+ background-color: red;
+
+/* need to put main to the right of nav, both need to be inline block */
+ display: inline-block;
+
+ /* need to move main block up to be below header */
+ vertical-align: top;
+
+ /* need to pad subcontent blocks left/right*/
+  padding: 15px;
+}
+.subcontents{
+ height: 200px;
+ width: 210px;
+ background-color: yellow;
+
+/* need all 3 contents to be on one line means all need to be inline block */
+ display: inline-block;
+
+ /* need to add margin to subcontents */
+  margin-right: 10px;
+}
+#advertisement{
+ height: 120px;
+ width: 660px;
+ background-color: purple;
+
+/* need to put margin between subcontents and adv */
+ margin-top: 20px;
+}

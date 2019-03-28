@@ -1,0 +1,72 @@
+/* ==================
+COLORS MATCHED VIA:
+https://html-color-codes.info/colors-from-image/#
+========================== */
+/* red bg: #F36870 */
+/* blue border: #82B4EE */
+/* beige bg: #D5D2AE */
+
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  /* outline: 1px dotted red; */
+}
+
+#wrapper{
+  margin: auto;
+  width: 970px;
+  height: 870px;
+  background-color: #D5D2AE;
+  padding: 0px 0px 0px 0px;
+}
+
+#header{
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+#top{
+  margin: 0px 0px 0px 0px;
+  padding: 30px 0px 10px 0px;
+  text-align: center;
+}
+
+.header img{
+  display: inline-block;
+}
+.header p{
+  font-size: 24pt;
+  font-weight: 700; /* bold */
+  display: inline-block;
+}
+
+.grid img{
+  height: 150px;
+  width: 150px;
+  margin: 6px 6px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  outline: 3px solid black;
+}
+
+/* pink */
+.images_5x4_pink{
+  background-color: #F36870;
+  border: 0.8rem solid #F36870;
+}
+
+/* blue */
+.images_5x4{
+  background-color: #82B4EE;
+  border: 0.8rem solid #82B4EE;
+}
+
+/* header images are flattened ??? */
+.images_short{
+  height: 60px;
+  width: 120px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  background-color: white;
+}

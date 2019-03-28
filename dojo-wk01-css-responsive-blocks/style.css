@@ -1,0 +1,123 @@
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  /* outline: 1px dotted red; */
+}
+
+#wrapper{
+  width: 1024px;
+  height: auto;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid silver;
+  border-radius: 3px;
+}
+
+#header{
+  width: auto;
+  height: 100px;
+  background-color: #009900; /* green; */
+  text-align: center;
+}
+
+#sidenav{
+  width: 261px;
+  height: 316px;
+  background-color: #0600FF; /* blue; */
+  display: inline-block;
+  margin: 10px 10px 0px 0px;
+}
+
+#main{
+  width: auto;
+  height: auto;
+  background-color: #FF0400; /* red */
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+#main-cnt{
+  width: auto;
+  height: auto;
+  background-color: #FF0400; /* red */
+  display: inline-block;
+  vertical-align: top;
+  /* margin: 0px 0px 0px 0px;
+  border: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px; */
+}
+
+.content{
+  width: 207px;
+  height: 100px;
+  background-color: #FFFF00; /* yellow; */
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#adbar{
+  width: 660px;
+  height: 100px;
+  background-color: #7E01FF; /* purple; */
+  margin: 10px 10px 10px 10px;
+  /* padding: 0px 0px 0px 0px; */
+}
+
+
+@media only screen and (max-width: 480px){
+  #wrapper{
+    margin: auto;
+    width: 247px;
+    height: auto;
+  }
+  h1{ display: none; }
+  h2{ display: none; }
+  h3{ display: block; }
+  /* .content{
+    display: block;
+    margin: 10px 0px 0px 0px;
+  } */
+  #sidenav{ display: none; }
+  #main{ width: auto; height: auto; }
+  .headhi{ height: 100px; }
+  #adbar{ width: auto; }
+}
+
+
+@media only screen and (min-width: 481px){
+  #wrapper{
+    margin: auto;
+    width: 504px;
+    height: auto;
+  }
+  h1{ display: none; }
+  h3{ display: none; }
+  h2{ display: block; }
+  /* .content{ display: inline-block; }
+  .lower{ display: block; } */
+  #sidenav{ display: none; }
+  #main{ width: auto; height: auto; }
+  .headhi{ height: 100px; }
+  #adbar{ width: auto; }
+}
+
+
+@media only screen and (min-width: 1024px){
+  #wrapper{
+    width: 1024px;
+    margin: auto;
+    height: auto;
+  }
+  h2{ display: none; }
+  h3{ display: none; }
+  h1{ display: block; }
+  /* .content{ display: inline-block; } */
+  #sidenav{ display: inline-block; }
+  #main{ width: auto; height: auto; }
+  .headhi{ height: 200px; }
+  #adbar{ width: auto; }
+}

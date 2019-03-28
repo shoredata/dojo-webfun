@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <!-- For bootstrap, to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Index - Week 2 - Assignment: jQuery Functions</title>
+
+
+    <link rel="stylesheet" type="text/css" href="jq-intro-style.css">
+    <style>
+      img {
+        /* border: 10px */
+        display: block;
+        width: 150px;
+      }
+      #wrapper{
+        /* border-top: 20px; */
+        margin-top: 20px;
+      }
+    </style>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // Assignment: Ninja to Cat
+        //
+        // Create a jQuery puzzle using two images sliced into five parts.
+        // Using jQuery, make it so that when each image slice is clicked, it will
+        // change to a different picture. You may use your own pictures and crop
+        // them or you can just download the images provided here.
+        //
+        // http://s3.amazonaws.com/General_V88/boomyeah/company_209/chapter_3026/handouts/chapter3026_3879_ninja-cat.zip
+        //
+        // Try not to spend more than 3 hours trying to get this to work.
+        //
+        // Helpful Tip (Adding Custom Attribute to Any HTML Tag):
+        // When you do this assignment, there is a little trick used by a lot of
+        // developers that could also be helpful. Remember that we kept emphasizing
+        // that HTML should contain the information, CSS the looks and JS the
+        // behavior. With this light, when you look at this assignment, where
+        // should the information about the alternative image be stored? You could
+        // argue that it should be in the HTML or it should be in the JS. Most
+        // experienced developers would argue that this should be in the HTML.
+        // Now, when you have HTML tag, it has some well-known attributes that
+        // have meanings for the browser. For example for "<img src="cat.png" />"
+        // we are using an img HTML tag with an attribute called 'src'. Now, we
+        // can also add whatever attributes we want in any HTML.
+        //
+        // For example, consider this:
+        //
+        // // <img src='ninja1.png' data-alt-src='cat1.png' />
+        //
+        // We created our own unique data-alt-src attribute with the value of 'cat1.png'.
+        // The browser would not understand what that attribute means so it wont
+        // do anything but in your JavaScript code you could access these values by doing something like below:
+        //
+        // // $('img').click(function() {
+        // //   console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+        // // });
+        //
+        // Creating custom attributes and storing helpful information in these are
+        // common practices among experienced developers. We want you to learn this
+        // and apply this principle when doing this assignment.
+
+        $( "#restore" ).hide( "fast", function() {
+          // to hide this button on startup, prob not best
+        });
+        $( "img" ).click(function() {
+          $( "#restore" ).show( "fast", function() {
+            // need to show as soon as 1 button is modified
+          });
+          // $( this ).hide( "slow", function() {
+          //   // Animation complete.
+          // });
+
+
+          var $input = $( this );
+          var state= $input.attr( "state" );
+          var src_img= $input.attr( "src_orig" );
+          var alt_img= $input.attr( "src_alt" );
+          $( "#clicked" ).html( ".attr( 'src' ): <b>" + $input.attr( "src" ) + "</b><br>" +
+            ".attr( 'state' ): <b>" + $input.attr( "state" ) + "</b>" );
+
+            if (state==1) {
+              //alt
+              $input.attr("src", alt_img);
+              $input.attr("state", "2");
+            }
+            else {
+              //original
+              $input.attr("src", src_img);
+              $input.attr("state", "1");
+            }
+
+        });
+
+        $( "#restore" ).click(function() {
+
+          $( "#restore" ).hide( "fast", function() {
+            // need to hide when display is reset
+          });
+
+          // $( "img" ).show( "fast", function() {
+          //   // this shows all img objects loaded by definition
+          // });
+
+
+
+
+          $( "#clicked" ).html( "" );
+
+        });
+
+      }); //end- ready{}
+    </script>
+
+  </head>
+  <body>
+
+    <!-- Use .container-fluid for a full width container, spanning the entire width of your viewport. -->
+    <div id="wrapper" class="container-fluid">
+
+      <div id="header" class="container-fluid bordered">
+
+        <img id="" src="ninjacat-img/ninja0.png" state="1" src_alt="ninjacat-img/cat0.png" src_orig="ninjacat-img/ninja0.png">
+        <img id="" src="ninjacat-img/ninja1.png" state="1" src_alt="ninjacat-img/cat1.png" src_orig="ninjacat-img/ninja1.png">
+        <img id="" src="ninjacat-img/ninja2.png" state="1" src_alt="ninjacat-img/cat2.png" src_orig="ninjacat-img/ninja2.png">
+        <img id="" src="ninjacat-img/ninja3.png" state="1" src_alt="ninjacat-img/cat3.png" src_orig="ninjacat-img/ninja3.png">
+        <img id="" src="ninjacat-img/ninja4.png" state="1" src_alt="ninjacat-img/cat4.png" src_orig="ninjacat-img/ninja4.png">
+
+        <br>
+        <br>
+        <div id="clicked"></div>
+        <br>
+        <br>
+
+        <div id="restore">RESTORE</div>
+
+
+      </div>
+
+    </div>
+
+
+</body>
+</html>

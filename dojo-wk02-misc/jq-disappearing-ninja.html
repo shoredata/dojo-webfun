@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <!-- For bootstrap, to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Index - Week 2 - Assignment: jQuery Functions</title>
+
+
+    <link rel="stylesheet" type="text/css" href="jq-intro-style.css">
+    <style>
+      img {
+        border: 10px
+        display: inline-block;
+      }
+    </style>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        // Assignment: Disappearing Ninja
+        //
+        // Create a simple HTML page with 8 images of equal width and height
+        // (you can use any image you like). When a particular image is clicked,
+        // have that image disappear. Also, include a button on the bottom of the
+        // page called 'Restore'. When the button is clicked, all images will
+        // appear.
+        //
+        // Dont spend more than 3 hours trying to get this to work.
+
+
+        $( "#restore" ).hide( "fast", function() {
+          // Animation complete.
+        });
+        $( "img" ).click(function() {
+          $( "#restore" ).show( "fast", function() {
+            // Animation complete.
+          });
+          $( this ).hide( "slow", function() {
+            // Animation complete.
+          });
+        });
+        $( "#restore" ).click(function() {
+          $( "#restore" ).hide( "fast", function() {
+            // Animation complete.
+          });
+          $( "img" ).show( "fast", function() {
+            // Animation complete.
+          });
+        });
+
+
+
+      }); //end- ready{}
+    </script>
+
+  </head>
+  <body>
+
+    <!-- Use .container-fluid for a full width container, spanning the entire width of your viewport. -->
+    <div id="wrapper" class="container-fluid">
+
+      <div id="header" class="container-fluid bordered">
+
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+        <img id="" src="ajax.png" alt="" height="40">
+
+        <br>
+
+        <div id="restore">RESTORE</div>
+
+
+      </div>
+
+    </div>
+
+
+</body>
+</html>

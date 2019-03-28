@@ -1,0 +1,25 @@
+cd ~/Desktop
+mkdir test
+touch index.html and styles.css
+cd test
+git init
+git add -m "empty files"
+git add .
+git commit -m "empty files"
+code index.html
+git status
+git add .
+git commit -m "update html"
+code styles.css
+git add .
+git commit -m "update css"
+git log
+git revert 14c1b17
+git revert 14c1b17
+git status
+git status
+git add .
+git commit -m "new update for css""
+"
+git log
+exit

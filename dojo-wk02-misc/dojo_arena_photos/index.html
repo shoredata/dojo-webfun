@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <!-- For bootstrap, to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dojo Arena - Photos JQuery Exercise</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      var arenasrc = "";
+      var player1src = "";
+      var player2src = "";
+      $(document).ready(function(){
+
+        // $( '.player-img' ).hover(function() {
+        //   $(this).attr('src', 'img/leo.png');
+  			// }, function() {
+  			// 	$(this).attr('src', 'img/donny.png');
+  			// });
+
+        $( 'li.player1' ).hover(function()
+        {
+          var $input = $( this );
+          var src_img= $input.attr( "srcimg" );
+          $('#img-player1').attr('src', src_img);
+        }, function()
+        {
+          if (player1src.length>0) {
+            $('#img-player1').attr('src', player1src);
+          }
+          // else {
+          //   $('#img-player1').attr('src', '');
+          // }
+        });
+
+        $( 'li.player2' ).hover(function()
+        {
+          var $input = $( this );
+          var src_img= $input.attr( "srcimg" );
+          $('#img-player2').attr('src', src_img);
+        }, function()
+        {
+          if (player2src.length>0) {
+            $('#img-player2').attr('src', player2src);
+          }
+          // else {
+          //   $('#img-player2').attr('src', '');
+          // }
+        });
+
+
+        $( '.arena-img' ).hover(function() {
+          var $input = $( this );
+          var src_img= $input.attr( "src" );
+          $( "#main" ).css('background-image', "url('" + src_img + "')");
+        }, function() {
+          if (arenasrc.length>0) {
+            $( "#main" ).css('background-image', "url('" + arenasrc + "')");
+          }
+          else {
+            $( '#main' ).css('background-image', "url('')");
+          }
+        });
+
+        $( ".arena-img" ).click(function() {
+          var $input = $( this );
+          var src_img = $input.attr( "src" );
+          arenasrc = src_img;
+          $( "#main" ).css('background-image', "url('" + arenasrc + "')");
+          $( ".arena" ).toggle( "slow", function() {
+            // Animation complete.
+          });
+          showFight();
+        });
+
+        $( "li.player1" ).click(function() {
+          var $input = $( this );
+          var src_img = $input.attr( "srcimg" );
+          player1src = src_img;
+          $('#img-player1').attr('src', player1src);
+          $( ".player1" ).toggle( "slow", function() {
+            // Animation complete.
+          });
+          showFight();
+        });
+
+
+        $( "li.player2" ).click(function() {
+          var $input = $( this );
+          var src_img = $input.attr( "srcimg" );
+          player2src = src_img;
+          $('#img-player2').attr('src', player2src);
+          $( ".player2" ).toggle( "slow", function() {
+            // Animation complete.
+          });
+          showFight();
+        });
+
+        function showFight() {
+          console.log(0);
+          if (arenasrc.length>0) {
+            console.log(1);
+            if (player1src.length>0) {
+              console.log(2);
+              if (player2src.length>0) {
+                console.log(3);
+                $('#fight').css('background-color', 'black');
+                $('#fight').css('text-align', 'center');
+                $('#fight').css('color', 'yellow');
+                // $( "#html_vs_text__html" ).html( "html: <h2> LOOK HERE </h2>" );
+                $('#fight').html("<h1>FIGHT</h1>");
+                $('.player-img').css('width', '220');
+              }
+            }
+          }
+        };
+        showFight();
+
+        // $( ".player-img" ).click(function() {
+        //   $( ".player" ).toggle( "slow", function() {
+        //     // Animation complete.
+        //   });
+        // });
+
+      }); //end- ready{}
+    </script>
+
+  </head>
+  <body>
+
+    <!-- Use .container-fluid for a full width container, spanning the entire width of your viewport. -->
+    <div id="wrapper" class="container-fluid">
+
+      <div id="fight" class="container-fluid"></div>
+
+      <div id="main" class="container-fluid">
+
+        <div id="arena" class="container-fluid arena">
+
+          <h2 class="arena">SELECT ARENA</h2>
+
+          <img id="arena1" class="arena arena-img" src="img/beach.jpg">
+          <img id="arena2" class="arena arena-img" src="img/dojo.jpg">
+          <img id="arena3" class="arena arena-img" src="img/earth.jpg">
+          <img id="arena4" class="arena arena-img" src="img/forest.jpg">
+          <img id="arena5" class="arena arena-img" src="img/matrix.jpg">
+          <img id="arena6" class="arena arena-img" src="img/snow.jpg">
+
+        </div>
+
+
+        <div id="players" class="container-fluid players">
+
+          <img id="img-player1" class="player1img player-img" src="img/donny.png">
+          <div id="player1div" class="container-fluid player1 div-player">
+
+            <h3 class="player1">SELECT PLAYER 1</h3>
+
+            <ul class="list-group player1">
+              <li class="player1 list-group-item d-flex justify-content-between align-items-center" srcimg="img/donny.png">
+                Donnatello
+              </li>
+              <li class="player1 list-group-item d-flex justify-content-between align-items-center" srcimg="img/leo.png">
+                Leonardo
+              </li>
+              <li class="player1 list-group-item d-flex justify-content-between align-items-center" srcimg="img/mikey.png">
+                Michaelangelo
+              </li>
+              <li class="player1 list-group-item d-flex justify-content-between align-items-center" srcimg="img/raphael.png">
+                Raphael
+              </li>
+            </ul>
+
+          </div>
+
+          <div id="player2div" class="container-fluid player2 div-player">
+
+            <h3 class="player2" style="text-align: right">SELECT PLAYER 2</h3>
+
+            <ul class="list-group player2">
+              <li class="player2 list-group-item d-flex justify-content-between align-items-center" srcimg="img/donny.png">
+                Donnatello
+              </li>
+              <li class="player2 list-group-item d-flex justify-content-between align-items-center" srcimg="img/leo.png">
+                Leonardo
+              </li>
+              <li class="player2 list-group-item d-flex justify-content-between align-items-center" srcimg="img/mikey.png">
+                Michaelangelo
+              </li>
+              <li class="player2 list-group-item d-flex justify-content-between align-items-center" srcimg="img/raphael.png">
+                Raphael
+              </li>
+            </ul>
+
+          </div>
+          <img id="img-player2" class="player2img player-img" src="img/donny.png">
+
+        </div>
+
+      </div>
+
+    </div>
+
+</body>
+</html>

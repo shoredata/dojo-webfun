@@ -1,0 +1,198 @@
+/* ==================
+COLORS MATCHED VIA:
+https://html-color-codes.info/colors-from-image/#
+========================== */
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  /* outline: 1px dotted red; */
+}
+#wrapper{
+  width: 970px;
+  background-color: orange;
+  /* center on window */
+  margin: auto;
+}
+#header{
+  height: 50px;
+  background-color: white;
+}
+.header-text{
+  height: 40px;
+  background-color: white;
+  /* need both contents to be on one line means all need to be inline block */
+  display: inline-block;
+}
+
+#head-left{
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+#head-right{
+  /* to right align the text within the block */
+  text-align: right;
+  margin-top: 0px;
+  margin-left: 520px;
+  height: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+#main_content{
+  height: auto; /* 925px; */
+  background: linear-gradient(#211116, #6F5964, #211116);  /* darkpurp, lightpupr,darkpurp */
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.subcontent{
+  height: 370px;
+  color: #001625;
+  background: linear-gradient(to right, #FFFFFF, #DACBD9);
+  /* need both contents to be on one line means all need to be inline block */
+  display: inline-block;
+  /* pulls all subcontent blocks to top of container */
+  vertical-align: top;
+  margin: 20px 0px 0px 20px;
+}
+
+.subcontent-tech{
+  height: 170px;
+  width: 293px;
+  color: #001625;
+  background: linear-gradient(to right, #FFFFFF, #DACBD9);
+  /* need both contents to be on one line means all need to be inline block */
+  display: inline-block;
+  /* pulls all subcontent blocks to top of container */
+  vertical-align: top;
+  margin: 0px 0px 20px 20px;
+}
+
+#sub-main-top-left{
+  width: 425px;
+  height: 10px;
+}
+#image-my-photo{
+  width: 420px;
+  border: 4px solid #C0C0C0;  /* light grey-ish */
+}
+
+.tech-shadow-button{
+  border-radius: 10px; /* rounded */
+  width: auto;
+  margin: 10px 85px 20px 85px;
+  border: 1px solid black;
+  padding: 5px 0 0 0;
+  height: 20px;
+  background-color: #407D61; /* seafoam-green */
+  color: white;
+  box-shadow: 5px 5px #C6C0C7; /* light grey */
+  text-align: center;
+  font-size: 10pt;
+}
+
+.sub-head-text-large{
+  width: auto;
+  height: 30px;
+  color: white;
+  background: linear-gradient(#B4B3B7, #8C8A97, #B4B3B7);  /* light/dark/light grey */
+  padding: 10px 0px 0px 10px;
+}
+
+.sub-head-text-med{
+  width: 283px;
+  height: 30px;
+  color: white;
+  background: linear-gradient(#B4B3B7, #8C8A97, #B4B3B7);  /* light/dark/light grey */
+  /* need both contents to be on one line means all need to be inline block */
+  display: inline-block;
+  padding: 10px 0px 0px 10px;
+  margin: 0px 0px 0px 20px;
+}
+
+#sub-main-top-right{
+  width: 480px;
+  height: 284px; /* not 280 because the border on the image is 4 high */
+}
+
+#sub-main-top-r-text{
+  width: auto;
+  height: 200px;
+  background: linear-gradient(to right, #FFFFFF, #DACBD9);
+  padding: 10px 10px 0px 10px;
+  font-size: 11.5pt;
+}
+
+.sub-main-low-text{
+  width: auto;
+  color: #001625;
+  background: linear-gradient(to right, #FFFFFF, #DACBD9);
+  padding: 10px 10px 0px 10px;
+  font-size: 11pt;
+}
+
+#sub-main-low-left{
+  width: 293px;
+}
+#sub-main-low-mid{
+  width: 293px;
+}
+#sub-main-low-right{
+  width: 293px;
+}
+
+#ad-top{
+
+}
+#ad-low{
+  margin-bottom:20px;
+}
+
+.advertisement{
+  height: 25px;
+  /* width: 660px; */
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* need to put margin between subcontents and adv */
+  /* margin-top: 10px; */
+  padding-top: 10px;
+}
+
+.image-main{
+  width: 293px;
+}
+.tech-img{
+  width: 43px;
+  margin: 10px 0px 0px 10px;
+}
+.link-img{
+  width: 20px;
+}
+
+.link-text{
+  font-style: italic;
+}
+
+h2{
+  color: black;
+}
+h4{
+  color: black;
+}
+
+a{
+  color: black;
+}
+#purple-link{
+  color: black;
+  /* need to make this link is transparent */
+  opacity: 0.8;
+}
+body {
+  color: #737373;
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>PacMan from Scratch - Week 2 Coding Dojo Exercise</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+
+    <div id='world'></div>
+    <div id='pacman'></div>
+    <div id='ghost0'></div>
+    <div id='ghost1'></div>
+    <div id='ghost2'></div>
+    <div id='ghost3'></div>
+    <div id="score">Score: 0</div>
+    <div id="lives">Lives: 0</div>
+
+    <script>
+      var world = [
+        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+        [2,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2],
+        [2,1,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,2,2,2,1,2,2,2,2,1,2],
+        [2,3,2,0,0,2,1,2,0,0,0,2,1,2,1,2,0,0,0,2,1,2,0,0,2,3,2],
+        [2,1,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,2,2,2,1,2,2,2,2,1,2],
+        [2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+        [2,1,2,2,2,2,1,2,1,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,1,2],
+        [2,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,1,2],
+        [2,2,2,2,2,2,1,2,2,2,2,2,0,2,0,2,2,2,1,2,1,2,2,2,2,2,2],
+        [0,0,0,0,0,2,1,2,0,0,0,0,0,0,0,0,0,0,0,2,1,2,0,0,0,0,0],
+        [2,2,2,2,2,2,1,2,0,2,2,2,2,2,2,2,2,2,0,2,1,2,2,2,2,2,2],
+        [0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,2,0,0,1,0,0,0,0,0,0],
+        [2,2,2,2,2,2,1,2,0,2,2,2,2,2,2,2,2,2,0,2,1,2,2,2,2,2,2],
+        [0,0,0,0,0,2,1,2,0,0,0,0,0,0,0,0,0,0,0,2,1,2,0,0,0,0,0],
+        [2,2,2,2,2,2,1,2,0,2,2,2,2,2,2,2,2,2,0,2,1,2,2,2,2,2,2],
+        [2,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2],
+        [2,1,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,2,2,2,1,2,2,2,2,1,2],
+        [2,1,1,1,1,2,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,2,1,1,1,1,2],
+        [2,2,2,2,1,2,1,2,1,2,2,2,2,2,2,2,2,2,1,2,1,2,1,2,2,2,2],
+        [2,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,1,1,1,2],
+        [2,1,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,2,2,2,1,2,2,2,2,1,2],
+        [2,1,2,0,0,2,1,2,0,0,0,2,1,2,1,2,0,0,0,2,1,2,0,0,2,1,2],
+        [2,3,2,2,2,2,1,2,2,2,2,2,1,2,1,2,2,2,2,2,1,2,2,2,2,3,2],
+        [2,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,2],
+        [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+      ];
+
+      var pacman = {
+        x:13,
+        y:17
+      };
+
+      var ghosts =[ {x:10, y:9}, {x:12,y:9}, {x:14,y:9}, {x:16,y:9}];
+
+
+
+      //amke sure starting square for pacman is blank!!
+
+
+      function drawWorld() {
+        var output = "";
+        for (var i=0; i<world.length; i++){
+          output += "\n<div class='row'>\n";
+          for (var j=0; j<world[i].length; j++){
+            if (world[i][j]==0) {
+              output += "<div class='empty'></div>";
+            }
+            else if (world[i][j]==1) {
+              output += "<div class='coin'></div>";
+            }
+            else if (world[i][j]==2) {
+              output += "<div class='brick'></div>";
+            }
+            else if (world[i][j]==3) {
+              output += "<div class='peach'></div>";
+            }
+          }
+          output += "\n</div>";
+        }
+        // console.log(output);
+        document.getElementById('world').innerHTML = output;
+      }
+      drawWorld();
+
+      function altGhosts() {
+        document.getElementById('ghost0').style.backgroundImage = "url('gh_x.gif')";
+        document.getElementById('ghost1').style.backgroundImage = "url('gh_x.gif')";
+        document.getElementById('ghost2').style.backgroundImage = "url('gh_x.gif')";
+        document.getElementById('ghost3').style.backgroundImage = "url('gh_x.gif')";
+      }
+      function restoreGhosts() {
+        document.getElementById('ghost0').style.backgroundImage = "url('gh_1.gif')";
+        document.getElementById('ghost1').style.backgroundImage = "url('gh_2.gif')";
+        document.getElementById('ghost2').style.backgroundImage = "url('gh_3.gif')";
+        document.getElementById('ghost3').style.backgroundImage = "url('gh_4.gif')";
+      }
+
+      document.onkeydown = function(e){
+        // console.log(pacman.x, pacman.y);
+        if (e.keyCode==37)
+        {
+          if (pacman.x>0)
+          {
+            if (world[pacman.y][pacman.x-1]!=2)
+            {
+              pacman.x -= 1;
+              document.getElementById('pacman').style.transform = "rotate(-180deg)";
+            }
+          }
+          else if (pacman.x==0 && pacman.y==11)
+          {
+            //wrap!!!
+            console.log("wrapleft");
+            pacman.x=world[0].length-1;
+            document.getElementById('pacman').style.transform = "rotate(-180deg)";
+          }
+        }
+        else if (e.keyCode==38)
+        {
+          if (pacman.y>0)
+          {
+            if (world[pacman.y-1][pacman.x]!=2)
+            {
+              pacman.y -= 1;
+              document.getElementById('pacman').style.transform = "rotate(-90deg)";
+            }
+          }
+        }
+        else if (e.keyCode==39)
+        {
+          if (pacman.x<world[0].length-1)
+          {
+            if (world[pacman.y][pacman.x+1]!=2)
+            {
+              pacman.x += 1;
+              document.getElementById('pacman').style.transform = "rotate(0deg)";
+            }
+          }
+          else if (pacman.x==world[0].length-1 && pacman.y==11)
+          {
+            //wrap!!!
+            console.log("wrapright");
+            pacman.x=0;
+            document.getElementById('pacman').style.transform = "rotate(0deg)";
+          }
+        }
+        else if (e.keyCode==40)
+        {
+          if (pacman.y<world.length-1)
+          {
+            if (world[pacman.y+1][pacman.x]!=2)
+            {
+              pacman.y += 1;
+              document.getElementById('pacman').style.transform = "rotate(90deg)";
+            }
+          }
+        }
+        drawPacman();
+        drawWorld();
+        drawScore();
+        moveGhosts();
+        drawGhosts();
+        checkDeath();
+      }
+      var introtate=0;
+      function drawPacman(){
+        document.getElementById('pacman').style.top = pacman.y*20 + "px"
+        document.getElementById('pacman').style.left = pacman.x*20 + "px"
+        if (world[pacman.y][pacman.x]==1) {
+          //coin, eat it!!
+          world[pacman.y][pacman.x] = 0;
+        }
+        else if (world[pacman.y][pacman.x]==3) {
+          //peach, eat it!!
+          world[pacman.y][pacman.x] = 0;
+          altGhosts();
+          ighosttimeout = 16; //16=4sec.
+        }
+      }
+      drawPacman();
+
+      function drawGhosts(){
+        document.getElementById('ghost0').style.top = ghosts[0].y*20 + "px"
+        document.getElementById('ghost0').style.left = ghosts[0].x*20 + "px"
+        document.getElementById('ghost1').style.top = ghosts[1].y*20 + "px"
+        document.getElementById('ghost1').style.left = ghosts[1].x*20 + "px"
+        document.getElementById('ghost2').style.top = ghosts[2].y*20 + "px"
+        document.getElementById('ghost2').style.left = ghosts[2].x*20 + "px"
+        document.getElementById('ghost3').style.top = ghosts[3].y*20 + "px"
+        document.getElementById('ghost3').style.left = ghosts[3].x*20 + "px"
+      }
+      drawGhosts();
+
+      function moveGhosts(){
+        for (var idx=0; idx<ghosts.length; idx++)
+        {
+          var bvalid = false;
+
+            var varangle = Math.atan2(pacman.y-ghosts[idx].y,pacman.x-ghosts[idx].x);
+            // console.log("angle:"+varangle+" radians")
+            var vardegrees = varangle * (180/Math.PI)
+            // console.log("degrees:"+vardegrees)
+            var vardist = Math.sqrt(pacman.y*ghosts[idx].y + pacman.x*ghosts[idx].x);
+            // console.log("distance:"+vardist)
+            var vardirint = vardegrees;
+            if (vardirint<0) {
+              vardirint = 360+vardegrees;
+            }
+            vardirint = Math.round(vardirint/90);
+            if (vardirint==4) {vardirint=0;}
+            // console.log(idx + ":"+vardirint+", " + vardegrees)
+
+            if (ighosttimeout>0)
+            {
+              if (vardirint==0) { vardirint = 2; }
+              else if (vardirint==1) { vardirint = 3; }
+              else if (vardirint==2) { vardirint = 0; }
+              else if (vardirint==3) { vardirint = 1; }
+
+            }
+
+            var dir = 0;
+            if (beven==true) {
+              dir = vardirint;
+            }
+            else {
+              dir = Math.floor(Math.random() * 4);
+            }
+
+            if (dir==3) {
+              //up
+              if (world[ghosts[idx].y-1][ghosts[idx].x]!=2){
+                bvalid = true;
+                ghosts[idx].y--;
+              }
+            }
+            else if (dir==2) {
+              //left
+              if (world[ghosts[idx].y][ghosts[idx].x-1]!=2){
+                if (ghosts[idx].x>0) {
+                  bvalid = true;
+                  ghosts[idx].x--;
+                }
+              }
+            }
+            else if (dir==1) {
+              //dn
+              if (world[ghosts[idx].y+1][ghosts[idx].x]!=2){
+                bvalid = true;
+                ghosts[idx].y++;
+              }
+            }
+            else if (dir==0) {
+              //rt
+              if (world[ghosts[idx].y][ghosts[idx].x+1]!=2){
+                if (ghosts[idx].x<world[0].length-1) {
+                  bvalid = true;
+                  ghosts[idx].x++;
+                }
+              }
+            }
+          // }
+          // if (!bvalid)
+          // {
+          //   idx--;
+          // }
+        }
+      }
+
+
+      function checkDeath() {
+        for (var idx=0; idx<4; idx++) {
+          if (pacman.x==ghosts[idx].x && pacman.y==ghosts[idx].y) {
+            if (ighosttimeout<=0)
+            {
+              if (intlives>0)
+              {
+                window.location.reload(true);
+                intlives--;
+                calcScore();
+                drawScore();
+              }
+              else {
+                alert("YOU DIED  :(");
+                window.location.reload(true);
+                intlives=3;
+              }
+            }
+            else {
+              // alert("YOU ATE HIM!!!  :)");
+              eatcount++;
+              ghosts[idx].x=9;
+              ghosts[idx].y=9;
+              drawGhosts();
+            }
+          }
+        }
+      }
+
+      function calcScore() {
+        outscore = 0;
+        for (var row=0; row<world.length; row++){
+          for (var col=0; col<world[row].length; col++) {
+            if (world[row][col]==2) {
+              //brick
+            }
+            else if (world[row][col]==1) {
+              //coin
+              outscore+=10;
+            }
+            else if (world[row][col]==0) {
+              //blank
+            }
+            else if (world[row][col]==3) {
+              //peach
+              outscore+=100;
+            }
+          }
+        }
+        // console.log(outscore);
+        return outscore;
+      }
+      var initscore=calcScore();
+      var eatcount=0;
+      var intlives=3;
+      function drawScore() {
+        outscore = initscore - calcScore();
+        outscore += (eatcount*1000);
+        outstring = "<div id='score'>Score: " + outscore + "</div>"
+        document.getElementById("score").innerHTML = outstring;
+
+        outstring = "<div id='lives'>Lives: " + intlives + "</div>"
+        document.getElementById("lives").innerHTML = outstring;
+      }
+      drawScore();
+
+
+
+      var myVar = setInterval(myTimer, 250);
+      var beven = false;
+      var ighosttimeout = 0;
+
+      function myTimer() {
+        if (beven==true)
+        {
+          beven=false;
+        }
+        else {
+          beven=true;
+        }
+        moveGhosts();
+        drawGhosts();
+        checkDeath();
+        if (ighosttimeout>0)
+        {
+          ighosttimeout--;
+          if (ighosttimeout==0)
+          {
+            restoreGhosts();
+          }
+        }
+      }
+
+
+    </script>
+
+  </body>
+</html>

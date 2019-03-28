@@ -1,0 +1,18 @@
+cd ~/desktop
+mkdir test
+cd test/
+touch index.html
+touch style.css
+touch commands.txt
+cp index.html index2.html
+c d..
+cd ..
+mkdir destination
+mv test/index2.html destination/index2.html
+rm test/style.css
+ls test
+ls destination
+rm -rf destination
+cat test/commands.txt
+quit
+exit

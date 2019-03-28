@@ -1,0 +1,62 @@
+/*CSS reset settings here*/
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+}
+
+#wrapper{
+  width: 970px;
+  height: auto;
+  background-color: silver;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  /* border: 2px solid black;
+  border-radius: 3px; */
+}
+
+#header{
+  width: auto;
+  height: 100px;
+  background-color: #98FB98; /* green; */
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#sidenav{
+  width: 25%;
+  height: 100px;
+  background-color: #1E90FF; /* blue; */
+  vertical-align: top;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#main{
+  width: 74%;
+  height: 100px;
+  background-color: #FF7F50; /* orange */
+  vertical-align: top;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#footer{
+  width: auto;
+  height: 100px;
+  background-color: #EEE8AA; /* yellow; */
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+/* mobile */
+@media only screen and (max-width: 480px){
+}
+/* tablet */
+@media only screen and (min-width: 481px){
+}
+/* desktop */
+@media only screen and (min-width: 1024px){
+}
